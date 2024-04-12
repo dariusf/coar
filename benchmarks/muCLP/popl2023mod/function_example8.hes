@@ -12,4 +12,5 @@ int main() {
 */
 forall (x: int). I x
 s.t.
-I (x: int): bool =mu (x > 100 => true) /\ (x <= 100 => I (-2 * x + 2) /\ I (-3 * x - 2));
+I (x: int): bool =mu (x > 100 => true) /\
+  (x <= 100 => I (-2 * x + 2) /\ I (-3 * x - 2));

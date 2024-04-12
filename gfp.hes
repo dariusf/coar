@@ -1,0 +1,22 @@
+
+/*
+  forall n, m. m > 0 <=> F n m
+  s.t.
+  F x y =nu A x y /\ B x y /\ (x > 0 => F (x - y) y) /\ (x <= 0 => F (x + y) y);
+  A x y =mu x <= 0 => A (x + y) y;
+  B x y =mu x > 0 => B (x - y) y;
+*/
+
+/*
+
+f(n) = n!=0 /\ f(n-1)
+
+prove f(n) => n>0
+not f(n) \/ n>0
+
+*/
+
+forall (n: int). G n \/ n>0
+s.t.
+F (n: int) : bool =nu n != 0 /\ F (n-1);
+G (n: int) : bool =mu n = 0 \/ G (n-1);
